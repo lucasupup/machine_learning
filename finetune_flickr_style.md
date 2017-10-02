@@ -4,6 +4,7 @@
 另外一份中图片路径为全部路径，用于train_val.prototxt文件中填写两个data层读取图片路径。
 - 用caffe/build/tools/convert_imageset生成lmdb文件。eg：caffe/create_lmdb.sh
 - 用caffe/build/tools/compute_image_mean生成mean.binaryproto文件，其中第二个参数为lmdb文件路径。eg:caffe/create_binary.sh
+- 生成mean.npy。eg:caffe/create_mean.py
 ### 命令行
 cpu模式。只需要solver文件和caffemodel文件。  
 caffe/build/tools/caffe train --solver caffe/models/finetune_flickr_style/solver.prototxt --weights caffe/models/finetune_flickr_style/bvlc_reference_caffenet.caffemodel   
