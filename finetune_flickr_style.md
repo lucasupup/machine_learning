@@ -15,7 +15,7 @@ eg:caffe/create_run.sh
 按照[修改办法](http://blog.csdn.net/lien0906/article/details/46816243)make clean，无效。调节test_interval,test_iter,max_iter无用，调节train_val.phototxt文件中test的bitch_size为15,出现问题：Aborted at 1506937655 (unix time) try "date -d @1506937655" if you are using GNU date 。按照[修改办法](http://blog.csdn.net/u014696921/article/details/74989941)，无效。于是继续调节bitch_size为10，没有报错，生成caffemodel文件。  
 标签从零开始，最大的标签不要超过总类数，不然不收敛。
 ### 参考
-- [solver.phototxt文件参数含义](http://blog.csdn.net/qiuqinjun/article/details/52608381)
+- [solver.phototxt文件参数含义](http://blog.csdn.net/u010417185/article/details/52182833)
 - [caffe安装仅cpu](http://blog.csdn.net/u011762313/article/details/47262549)
 - [caffe学习](http://www.cnblogs.com/denny402/tag/caffe/)
 - [finetune_flickr_style微调](http://blog.csdn.net/liumaolincycle/article/details/48501423)
