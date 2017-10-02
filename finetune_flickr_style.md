@@ -11,7 +11,8 @@ eg:caffe/create_run.sh
 ### 问题  
 - 一共有400张train图片和100张test图片。在train_val.phototxt文件中设置train和test的bitch_size为20，在文件solver.phototxt文件中设置test_iter=5，test_interval=4，max_iter=20。  
 - 出现问题：Error in `./build/tools/caffe': double free or corruption (out): 0x0000000001342890   
-按照[修改办法](http://blog.csdn.net/lien0906/article/details/46816243)make clean，无效。调节test_interval,test_iter,max_iter无用，调节train_val.phototxt文件中test的bitch_size为15,出现问题：Aborted at 1506937655 (unix time) try "date -d @1506937655" if you are using GNU date 。按照[修改办法](http://blog.csdn.net/u014696921/article/details/74989941)，无效。于是继续调节bitch_size为10，没有报错，生成caffemodel文件。
+按照[修改办法](http://blog.csdn.net/lien0906/article/details/46816243)make clean，无效。调节test_interval,test_iter,max_iter无用，调节train_val.phototxt文件中test的bitch_size为15,出现问题：Aborted at 1506937655 (unix time) try "date -d @1506937655" if you are using GNU date 。按照[修改办法](http://blog.csdn.net/u014696921/article/details/74989941)，无效。于是继续调节bitch_size为10，没有报错，生成caffemodel文件。  
+标签从零开始，最大的标签不要超过总类数，不然不收敛。
 ### 参考
 - [solver.phototxt文件参数含义](http://blog.csdn.net/qiuqinjun/article/details/52608381)
 - [caffe安装仅cpu](http://blog.csdn.net/u011762313/article/details/47262549)
